@@ -6,6 +6,12 @@
         <div>Name : {{team.name}}, Position : {{team.position}}  </div>
     </li>
   </ul>
+  <h2> Edited Akatsuki Main Team </h2>
+  <ul>
+    <li v-for="team in edited_main_teams">
+        <div>Name : {{team.name}}, Position : {{team.position}},  Value : {{team.value}}  </div>
+    </li>
+  </ul>
   </div>
 </template>
 
@@ -14,6 +20,9 @@ export default {
   computed: {
     main_teams() {
       return this.$store.state.main_teams;
+    },
+    edited_main_teams() {
+      return this.$store.getters.get_main_teams;
     }
   }
 }

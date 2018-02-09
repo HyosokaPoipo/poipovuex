@@ -19,7 +19,26 @@ export const store = new Vuex.Store({
     ]
   },
   getters: {
-
+    get_main_teams: state => {
+      var mainTeams = state.main_teams.map(team => {
+        return {
+          name:'__'+team.name+'__',
+          position: '_'+team.position+'_',
+          value:'_'+(team.value - 3)+'_'
+        }
+      });
+      return mainTeams;
+    },
+    get_bijuu_teams: state => {
+        var bijuuTeams = state.bijuu_teams.map(team => {
+          return {
+            name:'__'+team.name+'__',
+            position: '_'+team.position+'_',
+            value:'_'+(team.value - 3)+'_'
+          }
+        });
+        return bijuuTeams;
+    }
   },
   mutations: {
 
