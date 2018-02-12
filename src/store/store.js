@@ -4,6 +4,7 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 export const store = new Vuex.Store({
+  strict: true,
   state: {
     main_teams: [
       {name: 'Painz', position: 'leader', value: 99},
@@ -41,6 +42,11 @@ export const store = new Vuex.Store({
     }
   },
   mutations: {
+    changeMainPower: (state, angka) => {
+      state.main_teams.forEach(team => {
+        team.value -= angka;
+      })
+    }
 
   },
   actions: {
